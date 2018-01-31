@@ -34,6 +34,7 @@ services:
   gearman:
     image: moltar/gearmand:latest
 
+
 matrix:
   PHP_VERSION:
     - 7.1
