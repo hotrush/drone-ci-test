@@ -18,7 +18,7 @@ services:
   database:
     image: mysql:5.7
     volumes:
-      - ./mysql-tests:/var/lib/mysql
+      - /home/rush/Projects/tests/drone/mysql-tests:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret123
       - MYSQL_DATABASE=dealroom_testing
