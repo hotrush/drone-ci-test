@@ -17,10 +17,10 @@ class DemoTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature(UnitTester $I)
+    public function testSomeFeature()
     {
         $a = 'asdasd';
 
-        $I->assertEquals($a, 'asdasd');
+        $this->tester->assertEquals($a, 'asdasd');
     }
 }

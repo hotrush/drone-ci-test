@@ -4,8 +4,6 @@ clone:
     depth: 50
 #    tags: true
     recursive: true
-    submodule_override:
-      asset/layouts/dealroom_widget: https://github.com/dizzain/dealroom-widget.git
 
 pipeline:
   test:
@@ -20,26 +18,26 @@ pipeline:
 services:
   database:
     image: mysql:5.7
-#    volumes:
-#      - /home/dealroom/ci-data/mysql:/var/lib/mysql
+    volumes:
+      - ./mysql-tests:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret123
       - MYSQL_DATABASE=dealroom_testing
       - MYSQL_USER=dealroom
       - MYSQL_PASSWORD=secret
 
-#  elasticsearch:
-#    image: dealroom/elasticsearch
+  elasticsearch:
+    image: dealroom/elasticsearch
 
   memcached:
     image: memcached:1.5
 
-#  gearman:
-#    image: moltar/gearmand:latest
+  gearman:
+    image: moltar/gearmand:latest
 
 matrix:
   PHP_VERSION:
     - 7.1
-#    - 7.2
+    - 7.2
 
 branches: [master, dev, pr/*]
