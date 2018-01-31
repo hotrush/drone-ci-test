@@ -12,7 +12,7 @@ pipeline:
       - php -v
       - composer -V
       - composer install --prefer-dist -q -n
-      - ./vendor/bin/codecept run unit
+      - ./vendor/bin/codecept run unit -vvv
 
 services:
   database:
