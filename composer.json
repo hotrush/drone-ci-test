@@ -1,0 +1,13 @@
+{
+    "name": "rush/drone-ci-test",
+    "authors": [
+        {
+            "name": "rush",
+            "email": "johny64@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "codeception/codeception": "^2.3"
+    }
+}
